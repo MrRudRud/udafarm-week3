@@ -37,13 +37,13 @@ dependencies:
   # image_slider: ^1.0.2
   # image_picker: ^0.6.7+22
 
-# flutter_icons:
-#   ios: true
-#   android: true
-#   image_path_ios: "assets/launcher/resepUda.png"
-#   image_path_android: "assets/launcher/resepUda.png"
-#   adaptive_icon_background: "assets/launcher/resepUda.png"
-#   adaptive_icon_foreground: "assets/launcher/resepUda.png"
+flutter_icons:
+  ios: true
+  android: true
+  image_path_ios: "assets/launcher/udafarm.png"
+  image_path_android: "assets/launcher/udafarm.png"
+  adaptive_icon_background: "assets/launcher/udafarm.png"
+  adaptive_icon_foreground: "assets/launcher/udafarm.png"
 
 # flutter_native_splash:
 #   color: "#F5A442"
