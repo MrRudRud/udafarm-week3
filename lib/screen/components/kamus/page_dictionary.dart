@@ -107,26 +107,29 @@ class _PageDictionaryState extends State<PageDictionary> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10.0),
                                 child: Card(
-                                  child: ListTile(
+                                  child: ExpansionTile(
                                     title: Text(
                                       b!.judul,
-                                      style: kTitleCard.copyWith(
-                                          color: kPrimaryColor),
-                                    ),
-                                    trailing: InkWell(
-                                      onTap: () {
-                                        print('press');
-                                      },
-                                      child: Icon(
-                                        Icons.keyboard_tab_rounded,
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w500,
                                       ),
                                     ),
+                                    children: [
+                                      ListTile(
+                                        title: Text(b.isi),
+                                      ),
+                                      SizedBox(height: 20)
+                                    ],
                                   ),
                                 ),
                               );
                             },
                           )
                         : ListView.builder(
+                            scrollDirection: Axis.vertical,
+                            shrinkWrap: true,
+                            physics: BouncingScrollPhysics(),
                             itemCount: _list.length,
                             itemBuilder: (content, i) {
                               final a = _list[i];
@@ -134,20 +137,20 @@ class _PageDictionaryState extends State<PageDictionary> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10.0),
                                 child: Card(
-                                  child: ListTile(
+                                  child: ExpansionTile(
                                     title: Text(
                                       a!.judul,
-                                      style: kTitleCard.copyWith(
-                                          color: kPrimaryColor),
-                                    ),
-                                    trailing: InkWell(
-                                      onTap: () {
-                                        print('press');
-                                      },
-                                      child: Icon(
-                                        Icons.keyboard_tab_rounded,
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w500,
                                       ),
                                     ),
+                                    children: [
+                                      ListTile(
+                                        title: Text(a.isi),
+                                      ),
+                                      SizedBox(height: 20)
+                                    ],
                                   ),
                                 ),
                               );
@@ -159,31 +162,4 @@ class _PageDictionaryState extends State<PageDictionary> {
       ),
     );
   }
-
-  // _showDialog(msg, title) {
-  //   slideDialog.showSlideDialog(
-  //     context: context,
-  //     child: Container(
-  //       padding: EdgeInsets.all(20),
-  //       child: Column(
-  //         children: [
-  //           Text(
-  //             title,
-  //             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-  //           ),
-  //           SizedBox(
-  //             height: 10.0,
-  //           ),
-  //           Text(
-  //             msg,
-  //             style: TextStyle(fontSize: 17),
-  //           ),
-  //         ],
-  //       ),
-  //     ),
-  //     barrierColor: Colors.white.withOpacity(0.7),
-  //     pillColor: Colors.red,
-  //     backgroundColor: kGrey3,
-  //   );
-  // }
 }
