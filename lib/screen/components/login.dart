@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:udafarm/screen/components/register.dart';
 import 'package:udafarm/widget/bottom_navbar.dart';
+import 'package:udafarm/widget/button_universal.dart';
 import 'dart:convert';
 
 import 'package:udafarm/widget/constant.dart';
@@ -18,12 +19,8 @@ class _LoginPageState extends State<LoginPage> {
   statusLogin _loginStatus = statusLogin.notSignIn;
 
   final _keyForm = GlobalKey<FormState>();
-
   String? nUsername = '', nPassword = '';
-
   bool _obscureText = true;
-
-  get baseUrl => null;
 
   // Cek Form ketika klik tombol login
   checkForm() {
@@ -43,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     final data = jsonDecode(responseData.body);
-    print(data);
+    // print(data);
 
     // get data & response
     int value = data['value'];
@@ -183,20 +180,8 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 100.0),
-                      child: MaterialButton(
-                        color: Theme.of(context).accentColor,
-                        child: Text(
-                          'Submit',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText1!
-                              .copyWith(color: Colors.black),
-                        ),
-                        elevation: 8.0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                        ),
-                        onPressed: () {
+                      child: ButtonUniversal(
+                        press: () {
                           setState(() {
                             checkForm();
                           });

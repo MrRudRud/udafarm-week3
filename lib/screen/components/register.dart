@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
 import 'package:udafarm/screen/components/login.dart';
+import 'package:udafarm/widget/button_universal.dart';
 import 'package:udafarm/widget/constant.dart';
-import 'dart:convert';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -25,6 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {
   // event when user clicked register button
   checkForm() {
     final form = _keyForm.currentState;
+
     if (form!.validate()) {
       form.save();
       submitDataRegister();
@@ -65,13 +69,13 @@ class _RegisterPageState extends State<RegisterPage> {
             color: Colors.white,
           ),
           Text(
-            "$pesan",
+            " $pesan",
             style: TextStyle(color: Colors.white),
           ),
         ],
       ),
       duration: Duration(seconds: 3),
-      backgroundColor: Colors.orange,
+      backgroundColor: kPrimaryColor,
     ));
   }
 
@@ -146,18 +150,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 100.0),
-                  child: MaterialButton(
-                    color: Theme.of(context).accentColor,
-                    child: Text(
-                      'Submit',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(color: Colors.black),
-                    ),
-                    elevation: 8.0,
-                    onPressed: () {
-                      setState(() => checkForm());
+                  child: ButtonUniversal(
+                    press: () {
+                      setState(() {
+                        checkForm();
+                      });
                     },
                   ),
                 ),
