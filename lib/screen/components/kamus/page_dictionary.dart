@@ -4,6 +4,8 @@ import 'package:udafarm/widget/constant.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:udafarm/widget/custom_circular_progress.dart';
+
 class PageDictionary extends StatefulWidget {
   const PageDictionary({Key? key}) : super(key: key);
 
@@ -71,7 +73,7 @@ class _PageDictionaryState extends State<PageDictionary> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(5.0),
               child: Card(
                 child: ListTile(
                   leading: Icon(Icons.search),
@@ -94,72 +96,79 @@ class _PageDictionaryState extends State<PageDictionary> {
               ),
             ),
             loading
-                ? Center(
-                    child: CircularProgressIndicator(),
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 200),
+                    child: CustomCircular(),
                   )
                 : Expanded(
                     child: _search.length != 0 || controller.text.isNotEmpty
-                        ? ListView.builder(
-                            itemCount: _search.length,
-                            itemBuilder: (context, i) {
-                              final b = _search[i];
-                              return Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 10.0),
-                                child: Card(
-                                  child: ExpansionTile(
-                                    title: Text(
-                                      b!.judul,
-                                      style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    children: [
-                                      ListTile(
-                                        title: Text(b.isi),
-                                      ),
-                                      SizedBox(height: 20)
-                                    ],
-                                  ),
-                                ),
-                              );
-                            },
-                          )
-                        : ListView.builder(
-                            scrollDirection: Axis.vertical,
-                            shrinkWrap: true,
-                            physics: BouncingScrollPhysics(),
-                            itemCount: _list.length,
-                            itemBuilder: (content, i) {
-                              final a = _list[i];
-                              return Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 10.0),
-                                child: Card(
-                                  child: ExpansionTile(
-                                    title: Text(
-                                      a!.judul,
-                                      style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    children: [
-                                      ListTile(
-                                        title: Text(a.isi),
-                                      ),
-                                      SizedBox(height: 20)
-                                    ],
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
+                        ? _performSearch()
+                        : _createSearchView(),
                   ),
           ],
         ),
       ),
+    );
+  }
+
+  ListView _performSearch() {
+    return ListView.builder(
+      itemCount: _search.length,
+      itemBuilder: (context, i) {
+        final b = _search[i];
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Card(
+            child: ExpansionTile(
+              title: Text(
+                b!.judul,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              children: [
+                ListTile(
+                  title: Text(b.isi),
+                ),
+                SizedBox(height: 20)
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  ListView _createSearchView() {
+    return ListView.builder(
+      scrollDirection: Axis.vertical,
+      shrinkWrap: true,
+      physics: BouncingScrollPhysics(),
+      itemCount: _list.length,
+      itemBuilder: (content, i) {
+        final a = _list[i];
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Card(
+            child: ExpansionTile(
+              title: Text(
+                a!.judul,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              children: [
+                ListTile(
+                  title: Text(a.isi),
+                ),
+                SizedBox(height: 20)
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

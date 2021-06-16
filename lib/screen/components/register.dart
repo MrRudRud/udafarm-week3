@@ -104,11 +104,18 @@ class _RegisterPageState extends State<RegisterPage> {
                         : null,
                     onSaved: (val) => nUsername = cUsername.text,
                     decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: kPrimaryColor,
+                          width: 2.0,
+                        ),
+                      ),
+                      labelStyle: TextStyle(color: kPrimaryColor),
                       hintText: 'username',
                       labelText: 'Input Username',
                       prefixIcon: Icon(Icons.people, color: Colors.grey),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(5.0),
                       ),
                     ),
                   ),
@@ -121,11 +128,18 @@ class _RegisterPageState extends State<RegisterPage> {
                         val!.contains('@') ? null : 'Invalid Email',
                     onSaved: (val) => nEmail = cEmail.text,
                     decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: kPrimaryColor,
+                          width: 2.0,
+                        ),
+                      ),
+                      labelStyle: TextStyle(color: kPrimaryColor),
                       hintText: 'Email',
                       labelText: 'Input Email',
                       prefixIcon: Icon(Icons.email, color: Colors.grey),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(5.0),
                       ),
                     ),
                   ),
@@ -139,11 +153,18 @@ class _RegisterPageState extends State<RegisterPage> {
                         : null,
                     onSaved: (val) => nPassword = cPassword.text,
                     decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: kPrimaryColor,
+                          width: 2.0,
+                        ),
+                      ),
+                      labelStyle: TextStyle(color: kPrimaryColor),
                       hintText: 'password',
                       labelText: 'Input Password',
                       prefixIcon: Icon(Icons.lock, color: Colors.grey),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(5.0),
                       ),
                     ),
                   ),
@@ -151,6 +172,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 100.0),
                   child: ButtonUniversal(
+                    text: 'Submit',
                     press: () {
                       setState(() {
                         checkForm();

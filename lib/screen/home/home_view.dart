@@ -56,13 +56,21 @@ class _HomeViewState extends State<HomeView> {
 
   AppBar buildAppbar() {
     return AppBar(
-      title: Text(
-        'Welcome $username ',
-        style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+      title: Row(
+        children: [
+          Icon(
+            Icons.person_pin,
+            size: 30,
+          ),
+          Text(
+            ' Hi, $username',
+            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+          ),
+        ],
       ),
       automaticallyImplyLeading: false,
       elevation: 0,
-      leading: Icon(Icons.person),
+      // leading: Icon(Icons.person),
       actions: [
         IconButton(
           onPressed: () {

@@ -18,11 +18,22 @@ class ImageSlider extends StatelessWidget {
     return Container(
       child: ListView(
         children: [
+          SizedBox(height: 25.0),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: EdgeInsets.only(left: 19.0),
+              child: Text(
+                "LATEST NEWS",
+                style: kNonActiveTabStyle,
+              ),
+            ),
+          ),
           Container(
             width: double.infinity,
             height: 200,
             margin: EdgeInsets.only(top: 10.0),
-            padding: EdgeInsets.only(left: 5.0),
+            padding: EdgeInsets.only(left: 15.0),
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
@@ -47,7 +58,7 @@ class ImageSlider extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(left: 19.0),
               child: Text(
-                "BASED ON YOUR READING HISTORY",
+                "READING HISTORY",
                 style: kNonActiveTabStyle,
               ),
             ),

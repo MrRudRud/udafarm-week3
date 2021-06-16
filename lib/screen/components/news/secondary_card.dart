@@ -25,7 +25,7 @@ class SecondaryCard extends StatelessWidget {
             width: 90.0,
             height: 135.0,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(10.0),
               image: DecorationImage(
                 image: NetworkImage(baseUrl + 'gallery/' + news.foto),
                 fit: BoxFit.cover,

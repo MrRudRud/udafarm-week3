@@ -23,3 +23,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+      // colorScheme: ColorScheme.dark().copyWith(
+      //     primary: kPrimaryColor,
+      //   ),

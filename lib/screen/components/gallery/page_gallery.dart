@@ -5,6 +5,8 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:udafarm/widget/custom_circular_progress.dart';
+
 class PageGallery extends StatelessWidget {
   const PageGallery({Key? key}) : super(key: key);
 
@@ -53,7 +55,7 @@ class _GalleryState extends State<Gallery> {
               },
             );
           }
-          return Center(child: CircularProgressIndicator());
+          return Center(child: CustomCircular());
         },
       ),
     );

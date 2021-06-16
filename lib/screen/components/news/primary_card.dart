@@ -29,7 +29,7 @@ class PrimaryCard extends StatelessWidget {
                 tag: news.idBerita,
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(5.0),
                     image: DecorationImage(
                         image: NetworkImage(baseUrl + 'gallery/' + news.foto),
                         fit: BoxFit.cover),

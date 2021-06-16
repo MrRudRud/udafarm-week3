@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:udafarm/widget/constant.dart';
 
 class ButtonUniversal extends StatelessWidget {
   final VoidCallback press;
+  final String text;
 
   const ButtonUniversal({
     Key? key,
     required this.press,
+    required this.text,
   }) : super(key: key);
 
   @override
@@ -14,13 +17,12 @@ class ButtonUniversal extends StatelessWidget {
     return MaterialButton(
       color: kPrimaryColor,
       child: Text(
-        'Submit',
+        text,
         style: Theme.of(context)
             .textTheme
-            .bodyText1!
+            .bodyText2!
             .copyWith(color: Colors.white),
       ),
-      elevation: 8.0,
       onPressed: press,
     );
   }

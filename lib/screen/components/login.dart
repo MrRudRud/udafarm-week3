@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:udafarm/screen/components/register.dart';
@@ -82,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
       duration: Duration(seconds: 3),
-      // backgroundColor: kPrimaryColor,
+      backgroundColor: Colors.amber,
     ));
   }
 
@@ -128,6 +129,11 @@ class _LoginPageState extends State<LoginPage> {
                 child: ListView(
                   shrinkWrap: true,
                   children: [
+                    SvgPicture.asset(
+                      'assets/svg/farm-ico.svg',
+                      width: 150,
+                    ),
+                    SizedBox(height: 20.0),
                     Center(
                       child: Text('Login',
                           style: Theme.of(context)
@@ -135,7 +141,6 @@ class _LoginPageState extends State<LoginPage> {
                               .headline3!
                               .copyWith(color: kTextColor)),
                     ),
-                    SizedBox(height: 20.0),
                     Padding(
                       padding: EdgeInsets.all(20.0),
                       child: TextFormField(
@@ -144,11 +149,18 @@ class _LoginPageState extends State<LoginPage> {
                             : null,
                         onSaved: (val) => nUsername = val,
                         decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: kPrimaryColor,
+                              width: 2.0,
+                            ),
+                          ),
                           labelText: 'username',
+                          labelStyle: TextStyle(color: kPrimaryColor),
                           hintText: 'Input username',
                           prefixIcon: Icon(Icons.people, color: Colors.grey),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
+                            borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
                       ),
@@ -169,11 +181,18 @@ class _LoginPageState extends State<LoginPage> {
                                 ? Icons.visibility
                                 : Icons.visibility_off),
                           ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: kPrimaryColor,
+                              width: 2.0,
+                            ),
+                          ),
                           prefixIcon: Icon(Icons.lock, color: Colors.grey),
                           hintText: 'Password',
                           labelText: 'Input Password',
+                          labelStyle: TextStyle(color: kPrimaryColor),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
+                            borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
                       ),
@@ -181,6 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 100.0),
                       child: ButtonUniversal(
+                        text: "Submit",
                         press: () {
                           setState(() {
                             checkForm();

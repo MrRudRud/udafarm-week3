@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:udafarm/models/model_berita.dart';
 import 'package:udafarm/screen/components/news/image_slider.dart';
 import 'package:udafarm/widget/constant.dart';
+import 'package:udafarm/widget/custom_circular_progress.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -48,9 +49,7 @@ class _HomeBodyState extends State<HomeBody> {
     return Container(
         child: loading
             ? Center(
-                child: CircularProgressIndicator(
-                  backgroundColor: kPrimaryColor,
-                ),
+                child: CustomCircular(),
               )
             : ImageSlider(listBerita: listBerita));
   }
