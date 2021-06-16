@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:udafarm/screen/components/register.dart';
 
 // import 'package:udarecipes/view/home_view.dart';
 import 'dart:convert';
@@ -23,6 +22,8 @@ class _LoginPageState extends State<LoginPage> {
   String? nUsername = '', nPassword = '';
 
   bool _obscureText = true;
+
+  get baseUrl => null;
 
   // Cek Form ketika klik tombol login
   checkForm() {
@@ -84,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
       duration: Duration(seconds: 3),
-      backgroundColor: kPrimaryColor,
+      // backgroundColor: kPrimaryColor,
     ));
   }
 
@@ -130,13 +131,13 @@ class _LoginPageState extends State<LoginPage> {
                 child: ListView(
                   shrinkWrap: true,
                   children: [
-                    Center(
-                      child: Text('Login',
-                          style: Theme.of(context)
-                              .textTheme
-                              .headline3!
-                              .copyWith(color: kTextColor)),
-                    ),
+                    // Center(
+                    //   child: Text('Login',
+                    //       style: Theme.of(context)
+                    //           .textTheme
+                    //           .headline3!
+                    //           .copyWith(color: kTextColor)),
+                    // ),
                     SizedBox(height: 20.0),
                     Padding(
                       padding: EdgeInsets.all(20.0),
@@ -211,12 +212,12 @@ class _LoginPageState extends State<LoginPage> {
                           style: Theme.of(context).textTheme.bodyText2,
                         ),
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegisterPage(),
-                            ),
-                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => RegisterPage(),
+                          //   ),
+                          // );
                         },
                       ),
                     ),
@@ -228,7 +229,7 @@ class _LoginPageState extends State<LoginPage> {
         );
 
       case statusLogin.signIn:
-        return BottomNav();
+        return Container();
     }
   }
 }
