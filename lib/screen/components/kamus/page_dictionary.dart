@@ -51,9 +51,8 @@ class _PageDictionaryState extends State<PageDictionary> {
     }
 
     _list.forEach((f) {
-      // kolom apa yang akan kita cari (judul & id)
-      if (f!.judul.contains(text) || f.id.toString().contains(text))
-        _search.add(f);
+      // kolom apa yang akan kita cari (misal judul)
+      if (f!.judul.toLowerCase().contains(text.toLowerCase())) _search.add(f);
     });
 
     setState(() {});
@@ -104,23 +103,25 @@ class _PageDictionaryState extends State<PageDictionary> {
                             itemCount: _search.length,
                             itemBuilder: (context, i) {
                               final b = _search[i];
-                              return Container(
-                                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    MaterialButton(
-                                      child: Text(
-                                        b!.judul,
-                                        style: kTitleCard,
-                                      ),
-                                      onPressed: () {
-                                        msg = b.isi;
-                                        title = b.judul;
-                                        // _showDialog(msg, title);
-                                      },
+                              return Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10.0),
+                                child: Card(
+                                  child: ListTile(
+                                    title: Text(
+                                      b!.judul,
+                                      style: kTitleCard.copyWith(
+                                          color: kPrimaryColor),
                                     ),
-                                  ],
+                                    trailing: InkWell(
+                                      onTap: () {
+                                        print('press');
+                                      },
+                                      child: Icon(
+                                        Icons.keyboard_tab_rounded,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               );
                             },
@@ -129,25 +130,25 @@ class _PageDictionaryState extends State<PageDictionary> {
                             itemCount: _list.length,
                             itemBuilder: (content, i) {
                               final a = _list[i];
-                              return Container(
-                                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    MaterialButton(
-                                      child: Text(
-                                        a!.judul,
-                                        style: kTitleCard,
-                                      ),
-                                      onPressed: () {
-                                        msg = a.isi;
-                                        title = a.judul;
-                                        // _showDialog(msg, title);
-                                      },
+                              return Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10.0),
+                                child: Card(
+                                  child: ListTile(
+                                    title: Text(
+                                      a!.judul,
+                                      style: kTitleCard.copyWith(
+                                          color: kPrimaryColor),
                                     ),
-                                    SizedBox(height: 4.0),
-                                    // Text(a.isi),
-                                  ],
+                                    trailing: InkWell(
+                                      onTap: () {
+                                        print('press');
+                                      },
+                                      child: Icon(
+                                        Icons.keyboard_tab_rounded,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               );
                             },
