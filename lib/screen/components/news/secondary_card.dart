@@ -16,7 +16,7 @@ class SecondaryCard extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
+        borderRadius: BorderRadius.circular(8.0),
         border: Border.all(color: kGrey3, width: 1.0),
       ),
       child: Row(
@@ -25,7 +25,7 @@ class SecondaryCard extends StatelessWidget {
             width: 90.0,
             height: 135.0,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(8.0),
               image: DecorationImage(
                 image: NetworkImage(baseUrl + 'gallery/' + news.foto),
                 fit: BoxFit.cover,
@@ -43,7 +43,7 @@ class SecondaryCard extends StatelessWidget {
                     news.judul,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
-                    style: kTitleCard,
+                    style: kCategoryTitle,
                   ),
                   SizedBox(height: 4.0),
                   Text(

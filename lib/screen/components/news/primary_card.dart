@@ -16,10 +16,10 @@ class PrimaryCard extends StatelessWidget {
       margin: EdgeInsets.only(right: 20.0),
       child: Container(
         width: 300,
-        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
+        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          border: Border.all(color: kGrey3, width: 1.0),
+          borderRadius: BorderRadius.circular(8.0),
+          border: Border.all(color: kGrey3, width: 2.0),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +42,7 @@ class PrimaryCard extends StatelessWidget {
               news.judul,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
-              style: TextStyle(fontSize: 15.0),
+              style: kTitleCard,
             ),
           ],
         ),
