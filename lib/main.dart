@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udafarm/widget/constant.dart';
 
 import 'screen/home/home_screen.dart';
 
@@ -13,7 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Udafarm App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: kBackgroundColor,
+        primaryColor: kPrimaryColor,
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomeScreen(),
