@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:udafarm/screen/components/register.dart';
-
-// import 'package:udarecipes/view/home_view.dart';
+import 'package:udafarm/widget/bottom_navbar.dart';
 import 'dart:convert';
 
-import 'package:udafarm/widget/bottom_navbar.dart';
-
-// import 'bottom_navbar.dart';
+import 'package:udafarm/widget/constant.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -134,13 +131,13 @@ class _LoginPageState extends State<LoginPage> {
                 child: ListView(
                   shrinkWrap: true,
                   children: [
-                    // Center(
-                    //   child: Text('Login',
-                    //       style: Theme.of(context)
-                    //           .textTheme
-                    //           .headline3!
-                    //           .copyWith(color: kTextColor)),
-                    // ),
+                    Center(
+                      child: Text('Login',
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline3!
+                              .copyWith(color: kTextColor)),
+                    ),
                     SizedBox(height: 20.0),
                     Padding(
                       padding: EdgeInsets.all(20.0),
