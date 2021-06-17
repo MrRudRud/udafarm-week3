@@ -72,6 +72,7 @@ class _PageDictionaryState extends State<PageDictionary> {
       body: Container(
         child: Column(
           children: [
+            SizedBox(height: 20),
             Container(
               padding: EdgeInsets.all(5.0),
               child: Card(
