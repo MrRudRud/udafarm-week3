@@ -155,9 +155,9 @@ class _LoginPageState extends State<LoginPage> {
                               width: 2.0,
                             ),
                           ),
-                          labelText: 'username',
+                          labelText: 'Username',
                           labelStyle: TextStyle(color: kPrimaryColor),
-                          hintText: 'Input username',
+                          hintText: 'username',
                           prefixIcon: Icon(Icons.people, color: Colors.grey),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5.0),
@@ -189,7 +189,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           prefixIcon: Icon(Icons.lock, color: Colors.grey),
                           hintText: 'Password',
-                          labelText: 'Input Password',
+                          labelText: 'Password',
                           labelStyle: TextStyle(color: kPrimaryColor),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5.0),

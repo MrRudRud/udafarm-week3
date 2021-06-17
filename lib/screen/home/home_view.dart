@@ -23,7 +23,7 @@ class _HomeViewState extends State<HomeView> {
       sharedPreferences.setInt("value", 0);
       sharedPreferences.clear();
 
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => LoginPage(),

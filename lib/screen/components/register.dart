@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:udafarm/screen/components/login.dart';
@@ -90,6 +91,11 @@ class _RegisterPageState extends State<RegisterPage> {
             child: ListView(
               shrinkWrap: true,
               children: [
+                SvgPicture.asset(
+                  'assets/svg/farm-ico.svg',
+                  width: 150,
+                ),
+                SizedBox(height: 20.0),
                 Center(
                   child: Text('Register',
                       style: Theme.of(context).textTheme.headline3),
@@ -111,8 +117,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                       ),
                       labelStyle: TextStyle(color: kPrimaryColor),
-                      hintText: 'username',
-                      labelText: 'Input Username',
+                      hintText: 'Input username',
+                      labelText: 'Username',
                       prefixIcon: Icon(Icons.people, color: Colors.grey),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
@@ -135,8 +141,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                       ),
                       labelStyle: TextStyle(color: kPrimaryColor),
-                      hintText: 'Email',
-                      labelText: 'Input Email',
+                      hintText: 'Input Email',
+                      labelText: 'Email',
                       prefixIcon: Icon(Icons.email, color: Colors.grey),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
@@ -160,8 +166,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                       ),
                       labelStyle: TextStyle(color: kPrimaryColor),
-                      hintText: 'password',
-                      labelText: 'Input Password',
+                      hintText: 'Input Password',
+                      labelText: 'Password',
                       prefixIcon: Icon(Icons.lock, color: Colors.grey),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
