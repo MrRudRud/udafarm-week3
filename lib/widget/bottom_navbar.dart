@@ -29,8 +29,9 @@ class _BottomNavState extends State<BottomNav> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: _bottomNavView.elementAt(_selectedIndex),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _bottomNavView,
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
