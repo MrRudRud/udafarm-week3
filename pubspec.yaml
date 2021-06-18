@@ -30,6 +30,7 @@ dependencies:
   flutter_launcher_icons: ^0.9.0
   google_fonts: ^2.1.0
   intl: ^0.17.0
+  flutter_native_splash:
   # giffy_dialog: ^1.8.0
   # flutter_image_slider: ^0.0.2
   # flutter_carousel_slider: ^1.0.8
@@ -47,15 +48,15 @@ flutter_icons:
   adaptive_icon_background: "assets/launcher/udafarm.png"
   adaptive_icon_foreground: "assets/launcher/udafarm.png"
 
-# flutter_native_splash:
-#   color: "#F5A442"
-#   image: assets/splash/resep-uda-splash.png
-#   color_dark: "#1A1A1A"
-#   image_dark: assets/splash/resep-uda-splash.png
-#   android: true
-#   ios: true
-#   android_gravity: fill
-#   ios_content_mode: scaleAspectFill
+flutter_native_splash:
+  color: "#1f8f3b"
+  image: assets/splash/farm-fresh.jpg
+  color_dark: "#1A1A1A"
+  image_dark: assets/splash/farm-fresh.jpg
+  android: true
+  ios: true
+  android_gravity: fill
+  ios_content_mode: scaleAspectFill
 
 
 

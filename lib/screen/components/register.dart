@@ -63,8 +63,6 @@ class _RegisterPageState extends State<RegisterPage> {
     }
   }
 
-  void _statusRegister(pesan) async {}
-
   void _snackBar(String pesan) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
