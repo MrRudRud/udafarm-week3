@@ -131,18 +131,19 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     SvgPicture.asset(
                       'assets/svg/farm-ico.svg',
-                      width: 150,
+                      width: 120,
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     Center(
                       child: Text('Login',
                           style: Theme.of(context)
                               .textTheme
-                              .headline3!
+                              .headline4!
                               .copyWith(color: kTextColor)),
                     ),
+                    SizedBox(height: 10.0),
                     Padding(
-                      padding: EdgeInsets.all(20.0),
+                      padding: EdgeInsets.all(10.0),
                       child: TextFormField(
                         validator: (val) => val!.length < 6
                             ? 'Username too short (min 6 character)'
@@ -166,7 +167,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(20.0),
+                      padding: EdgeInsets.all(10.0),
                       child: TextFormField(
                         validator: (val) =>
                             val!.isEmpty ? 'Please input password' : null,

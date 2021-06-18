@@ -52,6 +52,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
     // check value 1 and 0
     if (value == 1) {
+      _snackBar(pesan);
+      await Future.delayed(Duration(milliseconds: 2000));
       setState(() => Navigator.pop(context));
     } else if (value == 2) {
       print(pesan);
@@ -61,23 +63,27 @@ class _RegisterPageState extends State<RegisterPage> {
     }
   }
 
+  void _statusRegister(pesan) async {}
+
   void _snackBar(String pesan) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Row(
-        children: [
-          Icon(
-            Icons.warning_amber_rounded,
-            color: Colors.white,
-          ),
-          Text(
-            " $pesan",
-            style: TextStyle(color: Colors.white),
-          ),
-        ],
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Row(
+          children: [
+            Icon(
+              Icons.warning_amber_rounded,
+              color: Colors.white,
+            ),
+            Text(
+              " $pesan",
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: kPrimaryColor,
       ),
-      duration: Duration(seconds: 3),
-      backgroundColor: kPrimaryColor,
-    ));
+    );
   }
 
   @override
@@ -93,16 +99,16 @@ class _RegisterPageState extends State<RegisterPage> {
               children: [
                 SvgPicture.asset(
                   'assets/svg/farm-ico.svg',
-                  width: 150,
+                  width: 120,
                 ),
                 SizedBox(height: 20.0),
                 Center(
                   child: Text('Register',
-                      style: Theme.of(context).textTheme.headline3),
+                      style: Theme.of(context).textTheme.headline4),
                 ),
-                SizedBox(height: 20.0),
+                SizedBox(height: 10.0),
                 Padding(
-                  padding: EdgeInsets.all(10.1),
+                  padding: EdgeInsets.all(10.0),
                   child: TextFormField(
                     controller: cUsername,
                     validator: (val) => val!.length < 6
