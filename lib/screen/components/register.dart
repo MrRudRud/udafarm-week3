@@ -53,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
     // check value 1 and 0
     if (value == 1) {
       _snackBar(pesan);
-      await Future.delayed(Duration(milliseconds: 2000));
+      Future.delayed(Duration(milliseconds: 2000));
       setState(() => Navigator.pop(context));
     } else if (value == 2) {
       print(pesan);
